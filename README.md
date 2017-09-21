@@ -20,10 +20,10 @@ luarocks install https://raw.githubusercontent.com/szym/display/master/display-s
 ```
 - Download this repo, unzip ONR-master,then
 ```bash
-  cd ONR
+  cd ONR-master
 ```
 
-- Download the network that has been trained and put it under the folder checkpoints/OP/unet_L1+cGAN/
+- Download the network that has been trained and put it under the folder 'checkpoints/OP/unet_L1+cGAN/'
 
   [[latest_net_G.t7]](https://drive.google.com/file/d/0B3pG20Tbq8Nec09LV3lSMDJSWDA/view)
 
@@ -31,4 +31,22 @@ luarocks install https://raw.githubusercontent.com/szym/display/master/display-s
 ## Test
 ```bash
 DATA_ROOT=/datasets/OP/ name=unet_L1+cGAN which_direction=AtoB phase=val_0.002 th test.lua
+```
+
+## Train
+```bash
+DATA_ROOT=/datasets/OP/ name=unet_L1+cGAN which_direction=BtoA th train.lua
+```
+
+## Setup Training and Test data
+### Generating Pairs
+We provide a python script to generate training data in the form of pairs of images {A,B}, where A and B are two different depicitions of the same underlying scene. Then we can learn to translate A to B or B to A:
+
+Create folder `/datasets/OP/` with subfolders `A` and `B`. `A` and `B` should each have their own subfolders `train`, `val`, `test`, etc. In `/datasets/OP/A/train`, put training images in style A. In `/datasets/OP/B/train`, put the corresponding images in style B. Repeat same for other data splits (`val`, `test`, etc).
+
+Corresponding images in a pair {A,B} must be the same size and have the same filename, e.g. `/datasets/OP/A/train/1.jpg` is considered to correspond to `/datasets/OP/B/train/1.jpg`.
+
+Once the data is formatted this way, call:
+```bash
+python scripts/combine_A_and_B.py --fold_A /path/to/data/A --fold_B /path/to/data/B --fold_AB /path/to/data
 ```
