@@ -32,6 +32,7 @@ luarocks install https://raw.githubusercontent.com/szym/display/master/display-s
 ```bash
 DATA_ROOT=/datasets/OP/ name=unet_L1+cGAN which_direction=AtoB phase=val_0.002 th test.lua
 ```
+Result images, and a webpage to view them, are saved to `./results/OP/unet_L1+cGAN` .
 
 ## Train
 ```bash
