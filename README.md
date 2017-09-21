@@ -18,7 +18,10 @@ Torch implementation for learning a mapping from input images to output images
 luarocks install nngraph
 luarocks install https://raw.githubusercontent.com/szym/display/master/display-scm-0.rockspec
 ```
-- Download this repo
+- Download this repo, unzip ONR,then
+```bash
+  cd ONR
+```
 
 - Download the network that has been trained and put it under checkpoints/OP/unet_L1+cGAN/ folder
 
