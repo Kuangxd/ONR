@@ -53,5 +53,5 @@ Once the data is formatted this way, call:
 ```bash
 python scripts/combine_A_and_B.py --fold_A /path/to/data/A --fold_B /path/to/data/B --fold_AB /path/to/data
 ```
-
+## Contact with me
 If you have any questions, please contact with me. (1007642157@qq.com)
