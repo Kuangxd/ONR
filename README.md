@@ -1,8 +1,8 @@
 # Single infrared image optical noise removal using a deep convolutional neural network
 
-Torch implementation for learning a mapping from input images to output images
-Our code refers to [[pix2pix]](https://github.com/phillipi/pix2pix)
--Note that we remove the dropout layers in the decoder, as we have enough large dataset to avoid overfitting.
+- Torch implementation for learning a mapping from input images to output images
+- Our code refers to [[pix2pix]](https://github.com/phillipi/pix2pix)
+- Note that we remove the dropout layers in the decoder, as we have enough large dataset to avoid overfitting.
 
 <img src="imgs/img1.png" width="900px"/>
 
